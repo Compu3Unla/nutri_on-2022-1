@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <title>Nutri-on</title>
 <link href="style.css" rel="stylesheet" type="text/css">
+<link  href="css/jquery.fancybox.min.css" rel="stylesheet">
+<link rel="icon" type="image/jpg" href="img/planner/Untitleda.png">
+
 </head>
 
 <body>
 	
 	<header>
-		<img src="img/logoprincipal.png" width="236" heigth="53" alt="logoprincipal">
+		<img src="img/home/logoprincipal.png" width="236" heigth="53" alt="logoprincipal">
 		<nav class="botonera">
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -23,7 +26,7 @@
 	
 	<main>
 		<section class="recetacompleta">
-			<img src="img/receta-desayuno/avocadotoast.jpg" width="500" heigth="667" alt="avocado">
+			<img src="img/receta-desayuno/tostada.jpg" width="500" heigth="667" alt="avocado">
 
 			<div class="receta">
 			<article class="informacion">
@@ -37,9 +40,9 @@
 			<article class="ingredientes">
 				<h4>Ingredientes</h4>
 						<ul>
-							<li>1 palta</li>
-							<li>1 huevo</li>
-							<li>Pan integral</li>
+							<li> <input type="checkbox">1 palta</li>
+							<li> <input type="checkbox">1 huevo</li>
+							<li> <input type="checkbox">Pan integral</li>
 						</ul>
 			</article>
 			
@@ -54,6 +57,36 @@
 					
 		</section>
 		
+		<section class="video">
+			<p>También podes ver el video del paso a paso:</p>
+			<video src="video/receta-avocadotoast.mp4" controls width="300" height=""></video>
+		</section>
+		
+		
+		<section class="otrosdesayunos">
+		<p>Otros desayunos que te pueden interesar...</p>
+		
+			<article class="galeria">
+				<a href="img/receta-desayuno/galeria/yogurtbowl.png" data-fancybox="gallery"  data-caption="Yogurt bowl">
+					<img src="img/receta-desayuno/galeria/miniaturas/yogurtbowl.png" alt="yogurt"/>
+				</a>
+
+				<a href="img/receta-desayuno/galeria/galletasavena.jpg" data-fancybox="gallery" data-caption="Galletitas de avena">
+					<img src="img/receta-desayuno/galeria/miniaturas/galletasavena.jpg" alt="galletas"/>
+				</a>
+				
+				<a href="img/receta-desayuno/galeria/muffinsbanana.jpeg" data-fancybox="gallery" data-caption="Muffins de banana">
+					<img src="img/receta-desayuno/galeria/miniaturas/muffins.png" alt="muffins"/>
+				</a>
+			</article>
+		
+		
+		
+		
+		
+		</section>
+		
+		
 		
 	</main>
 	
@@ -64,10 +97,14 @@
 		<p>Políticas de privacidad</p>
 		
 		<div class="redessociales">
-			<img src="img/facebook.png" width="20" height="20" alt="facebook">
-			<img src="img/instagram.png" width="20" height="20" alt="instagram">
-			<img src="img/twitter.png" width="20" height="20" alt="twitter">
+			<img src="img/home/facebook.png" width="20" height="20" alt="facebook">
+			<img src="img/home/instagram.png" width="20" height="20" alt="instagram">
+			<img src="img/home/twitter.png" width="20" height="20" alt="twitter">
 		</div>
 	</footer>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
 </body>
 </html>
