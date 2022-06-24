@@ -1,9 +1,11 @@
 
 @charset "utf-8";
 /* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {font-family: montserrat;
 	margin: 0;
+	box-sizing: border-box;
 	}
 
 
@@ -16,8 +18,8 @@ h2 {
 	padding: 10px 10px 10px 10px;
 	width: 200px;
 	text-align: center;
-	margin-left:  50px;
-	margin-bottom:  80px;
+	margin-left:  80px;
+	margin-bottom: 80px;
 }
 
 h2 a {
@@ -27,8 +29,8 @@ h2 a {
 
 
 h2:hover {
-	color:#316029;
-	box-shadow: 4px 4px 20px #316029;
+	color:#C47318;
+	box-shadow: 4px 4px 20px #C47318;
 }
 
 
@@ -36,17 +38,19 @@ h2:hover {
 /*-------------HEADER------------*/
 
 header {
+	margin-top: 0;
 	box-sizing: border-box;
 	width:100%;
 	height:80px;
 	background-color:#FFFFFF;
 	display: flex;
 	justify-content: flex-end;
+	position: fixed;
+	top:0;
 }
 
 header img {
-	margin-top:20px;
-	margin-left: 80px;
+	margin: 20px 0px 10px 5000px;
 }
 
 .botonera ul  {
@@ -56,11 +60,11 @@ header img {
 	list-style:none;
 	display: flex;
 	justify-content: flex-end;
-	margin:20px 90px 20px 700px;
+	margin:20px 90px 20px 570px;
 	}
 
 .botonera li {
-	margin-top: 30px;
+	margin-top: 10px;
 	padding-right: 25px;
 	}
 
@@ -72,9 +76,13 @@ header img {
 
 .botonera a:hover{
 	color:#FB9224;
+	transform: scale(1.2);
+	border-bottom:solid;
+	border-bottom-color: #FB9224;
+	
 }
 
-	
+
 
 .clickhome{
 	border-bottom:solid;
@@ -84,39 +92,79 @@ header img {
 
 /*------------- SECCION / HOME-----------------------------------*/
 
+
 /*-------------bienvenida------------*/
 .bienvenida {
+	display: flex;
+	justify-content: center;
+	padding:0px;
+	margin:80px 0px 150px 0px;
+}
+
+.presentacion {
+	box-sizing: border-box;
 	display:flex;
 	flex-direction: column;
 	align-items:center;
-	margin: 0px 20px 0px 20px;
-	margin-right: 580px;
+	margin: 0px 0px 0px 90px;;
 
 }
 
-.bienvenida p { 
+.presentacion p { 
 	font-size: 1em;
-	font-weight:550;
+	font-weight:500;
 	text-align: center;
 	width: 300px;
-	
 }
 
-.imagenverduras {
+
+.imagenverduras img {
+	width:80%;
+	height: auto;
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
 	display:flex;
 	flex-direction: row;
-	justify-content: flex-end;
-	margin: -450px 20px 50px 50px;
+	justify-content: center;
+	transform: scale(1.1);
+	transform-style: flat;
+	animation-name:canasta;
+	animation-duration: 8s;
+	animation-timing-function: ease-in;
+	animation-direction:normal;
+	animation-iteration-count: infinite;
 }
+
+
+@keyframes canasta {
+	0%{ transform: rotate(5deg);}
+	
+	10%{ 
+		transform: rotate(-10deg);}
+	
+	50%{
+		transform: rotate(5deg);}
+	
+	80%{ 
+		transform: rotate(-10deg);}
+	
+	100%{
+		animation-play-state: paused;}
+}
+	
+
 
 
 /*-------------introducción------------*/
 
 .home  {
-	background-image:url("img/fondo-home.svg");
+	background-image:url("img/home/fondo-home.svg");
 	background-repeat: repeat-x;
-	background-position: center;
+	background-position:center 450px; 
+	width: auto;
 	padding-top:50px;
+
 }
 
 
@@ -125,6 +173,12 @@ header img {
 	font-size: 1.9em;
 	color:#316029;
 	margin-left: 50px;
+}
+
+.recetaindividual a {
+	text-decoration: none;
+	color: black
+	
 }
 
 .recetaindividual {
@@ -150,7 +204,7 @@ header img {
 .recetaindividual img {
 	border-radius: 40px 40px 0px 0px;
 	width: 100%;
-	height: 150px;
+	height: 180px;
 	margin: 0px;
 	padding: 0px;
 }
@@ -164,7 +218,13 @@ header img {
 
 /*-------------valores------------*/
 
-.nuestrosvalores {padding-top: 100px;}
+.nuestrosvalores {
+	padding-top: 150px;
+	padding-bottom: 60px;}
+
+.nuestrosvalores h1 {
+	margin-left: 80px;
+}
 
 .valorindividual {
 	display: flex;
@@ -189,18 +249,371 @@ header img {
 	padding-top:10px;
 	font-size: 1.4em;
 }
+.valorindividual img {
+	transform:rotate(3deg);
+	transform-style: flat;
+	animation-name:verduravalor;
+	animation-duration: 5s;
+	animation-timing-function: ease-in;
+	animation-direction:normal;
+	animation-iteration-count: infinite;
+}
+
+@keyframes verduravalor {
+	0%{transform: translateY(0px)}
+	
+	20%{transform: translateY -20px;
+	transform: rotate(-100deg)}
+	
+	40%{transform: translateY 5px;}
+	
+	60%{transform: translateY( -10px);}
+	
+	80%{transform: translateY( 5px);}
+	
+	100%{transform: translateY(0px);}
+}
+
+/*-------------testimonios------------*/
+
+.testimonios {
+	padding:60px 100px 70px 100px;
+	margin:0px;
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+	height: 400px;
+}
+
+#secciontestimonios {
+	background-color:#316029;
+}
+
+.testimonioind {
+	color:white;
+	border: solid;
+	border-radius:40px;
+	padding: 0px 0px 1px 0px;
+	margin: 10px 20px 10px 20px;
+	width: 600px;
+	heigth: auto;
+	text-align: center;
+}
+
+.testimonioind img {
+	border-radius: 40px 40px 0px 0px;
+	width: 100%;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	}
+
+.testimonioind p{
+	font-style: italic;
+	font-size: 0.7em;
+	text-align: center;
+	align-content: center;
+	padding: 0px 10px 10px 10px;
+}
+
+#secciontestimonios h1 {
+	color:white;
+	display: flex;
+	flex-direction: column;
+	text-align:left;
+	padding:60px 100px 0px 110px;
+	margin: 0px 10px 0px 10px;
+}
+
+/*------------- REGISTRARSE-----------------------------*/
 
 
+.imagenfondo {
+	background: url("img/registro/backgroud.svg") no-repeat center center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-size: cover;
+	z-index: -1;
+	margin-top:0;
+	padding-top:0;
+}
+
+#iconologo  {
+	display: grid;
+	place-items: center;
+	margin-top: 0px;
+	padding-top:50px;
+	margin-left: 5px;
+}
+
+.botonsiguiente {
+	align-content: center;
+  	top: 50%;
+  	left: 50%;
+	display: grid;
+	place-content: center;
+}
+
+.botonsig{
+	background-color: #FB9224;
+	border-radius: 50px 50px;
+	color: white;
+	width: 170px;
+	text-align: center; 
+	font-weight: 600;
+	box-shadow: 3px 3px 10px #C96700;
+	margin-top: 200px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+ 	position: relative;
+  	margin: 30px 0;
+	border: none;
+  	padding: 14px 60px;
+	cursor: pointer;
+  	overflow: hidden;
+  	transition: 1s all ease;
+}
+
+.botonsig::after{
+  	background: #F4B16B;
+  	content: "";
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+  	z-index: 1;
+	transition: all 0.6s ease;
+	width: 0%;
+  	height: 100%;
+	cursor: pointer;
+	overflow: hidden;
+	
+}
+
+.botonsig:hover::after{
+  	width: 100%;
+}
+
+.botonsig span {
+	position:relative;
+	z-index: 2;
+	font-family: montserrat;
+}
+
+.botonsig a {
+	text-decoration:none;
+	color: white;}
+
+.formulario {
+	margin: 80px 0 30px 0;
+	text-align: center;
+}
+
+.tipear {
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: #8E8E8E;
+	border-radius: 5px 5px;	
+	padding: 5px; 
+	box-shadow: 5px 5px 10px #E6E6E6;
+}
+
+.datosregistro {
+	font-size: 13px;
+	margin-top: 10px;
+}
+
+/*------------- iniciar sesion-----------------------------*/
+
+.seccioniniciosesion {
+	display: grid;
+	place-content: center;}
+
+
+.inicioboton {
+	align-content: center;
+  	top: 50%;
+  	left: 50%;
+}
+
+.iniciarsesion{
+	background-color: #FB9224;
+	border-radius: 50px 50px;
+	color: white;
+	width: 170px;
+	height: 50px;
+	text-align: center; 
+	font-weight: 600;
+	box-shadow: 3px 3px 10px #C96700;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+ 	position: absolute;
+  	margin: 20px 0px 10px 10px;
+	border: none;
+  	padding: 15px 5px 0px 5px;
+	cursor: pointer;
+  	overflow: hidden;
+  	transition: 1s all ease;
+}
+
+.iniciarsesion a {
+	text-decoration:none;
+	color: white;
+	position:absolute;
+	z-index: 2;
+}
+
+.iniciarsesion::after{
+  	background: #F4B16B;
+  	content: "";
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+  	z-index: 1;
+	transition: all 0.6s ease;
+	width: 0%;
+  	height: 100%;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.iniciarsesion:hover::after{
+  	width: 100%;
+}
+
+.iniciarsesion span {
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.formulario {
+	margin: 30px 0 30px 0;
+	text-align: center;
+}
+
+
+.datosregistro {
+	font-size: 13px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.crearcuenta {
+	margin-top:80px;
+	margin-bottom: 5px;
+	padding: 10px 0;
+}
+.crearcuenta p {
+	margin-top: 10px;
+	font-size: 13px; 
+	text-align: center;
+}
+
+.crearcuenta button {
+	font-family: montserrat;
+	color: #F39532;
+	text-align: center;
+	font-size: 19px;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: #FFFFFF;
+	border: none;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.crearcuenta button:hover {
+	color: #B65D00;
+	cursor: pointer;
+}
+
+.crearcuenta button:focus {
+	color: #B65D00;
+	cursor: pointer;
+}
+
+.crearcuenta a {
+	text-decoration: none;
+}
+
+.crearcuenta a p {color:black}
+
+/*------------- preguntas iniciar sesion-----------------------------*/
+
+.titulopreguntas {
+	text-align: center;
+	margin-top: 80px;
+	font-weight: bold;
+}
+
+
+.preguntas {
+	display: grid;
+	place-content: center;}
+
+.preguntas p {
+	text-align: center;
+	font-size: 15px;
+	width: 400px;
+}
+
+
+.niveles {
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+
+.nivel {
+	border: #8E8E8E;
+	border-radius: 50px 50px;
+	color: #000000;
+	width: 300px;
+	padding: 15px 0;
+	text-align: center; 
+	box-shadow: 3px 3px 10px #E6E6E6;
+	margin-top: 30px;
+	cursor: pointer;
+  	overflow: hidden;
+	font-family: montserrat;
+}
+
+.nivel:hover {
+	background-color: #F4B16B;
+	box-shadow: 3px 3px 10px #C96700;
+}
+
+.nivel:focus {
+	background-color: #F4B16B;
+	box-shadow: 3px 3px 10px #C96700;
+	width: 100%;
+}
 
 /*------------- SECCION / MOMENTO DEL DIA-----------------------------*/
 
-.titulo {
+.momentosdeldia h3 {
+	color:#316029;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	line-height: 29px;
-	margin: 90px 90px;
+	margin: 150px 90px 30px 90px;
 }
+
+.momentosdeldia p {
+	color:#000000;
+	font-style: normal;
+	font-size: 1em;
+	line-height: 23px;
+	width:600px;
+	margin: 0px 0px 50px 90px;}
 
 .click {
 	border-bottom:solid;
@@ -211,7 +624,7 @@ header img {
 	background-color: #FDFBFB;
 	border-radius:40px;
 	padding: 0px 10px -5px 20px;
-	margin: 0px 20px 200px 40px;
+	margin: 0px 10px 200px 20px;
 	width: 210px;
 	height: auto;
 	text-align: center;
@@ -245,12 +658,12 @@ header img {
 	color: white;
 }
 
-.boton  {
+.boton2  {
 	background-color: #7FAB00;
 	border-radius: 30px 30px;
 	color: white;
 	font-size: 1.8em;
-	padding: 10px 10px 10px 10px;
+	padding: 20px 10px 0px 10px;
 	width: 100px;
 	text-align: center;
 	margin: 30px 10px;
@@ -264,7 +677,179 @@ header img {
 	box-shadow: 4px 4px 20px #636363;
 }
 
+/*------------- todos los desayunos-----------------------------*/
 
+.titulodesayunos h3 {
+	color:#316029;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.5em;
+	line-height: 29px;
+	margin: 150px 90px 30px 90px;
+}
+
+.titulodesayunos p {
+	color:#000000;
+	font-style: normal;
+	font-size: 1em;
+	line-height: 23px;
+	width:600px;
+	margin: 0px 0px 10px 90px;}
+
+
+.todascardsdesayunos {
+	display:flex;
+	display: inline-block;
+	justify-content: center;
+	margin: 20px 80px 50px 80px;
+	flex-wrap: wrap;
+}
+
+.carddesayunos {
+	background-color: #FDFBFB;
+	border-radius:40px;
+	padding: 0px 0px 0px 0px;
+	margin: 20px 50px 50px 20px;;
+    width: 300px;
+	height: 380px; 
+	box-shadow: 5px 5px 5px #d1d3d4;
+	text-align: start;
+	display: inline-block;
+	justify-content: center;
+}
+
+.carddesayunos p {
+	margin-left: 20px;
+	}
+
+.carddesayunos img {
+	display:flex;
+	justify-content: center;
+	border-radius: 40px 40px 0px 0px;
+	width: 100%;
+	height: 150px;
+	padding-left: 0;
+}
+
+.botoncocinar {
+	background-color:#9DCF0D;
+	border-radius: 30px 30px;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	color: white;
+	width: 100px;
+	padding: 10px;
+	text-align: center;
+	font-weight: 800;
+	display: inline-block;
+	justify-content: center;
+	margin-left: 90px;
+	position: relative;
+	cursor:pointer;
+	overflow:hidden;
+	transition: 1s all ease;
+}
+
+.botoncocinar a {
+	text-decoration: none;
+	color:white;
+}
+
+.botoncocinar:after {
+	background-color: #316029;
+	content: "";
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+	transition: all 0.6 ease;
+	width: 0%;
+	height: 100%;
+	cursor: pointer;
+	}
+	
+.botoncocinar:hover {
+	background-color:#316029;
+	cursor: pointer;
+	}
+
+.botoncocinar:span {
+	position: relative;
+	z-index: 2;
+	}
+
+.botoncocinar:active {
+	background-color:#316029;
+	cursor: pointer;
+	}
+
+
+.info img {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	padding-top: 10px;
+	padding-right: 10px; 
+	align-items: center;
+	margin-left: 45px;
+}	
+
+.info p {
+	width: 67px;
+	display: inline-block;
+	align-items: center;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	text-align: center;
+}
+.bold {
+	font-weight: 800;
+	}
+
+.estrella1 img {
+	width: 50px;
+	height: 50px;
+	box-shadow: 5px 5px 5px #938A86;
+	border-radius: 50%;
+	}
+		
+.desayunoimg {
+	display: flex;
+	}
+
+.estrella1 {
+	display: flex;
+	margin-left: -60px;
+	margin-top: 10px;
+	}
+
+.buscar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 34%;
+	top: 26%;
+	background: #FB9224;
+	padding: 5px;
+	border-radius: 40px; 
+}
+
+.buscartexto {
+	border: none;
+	background: none;
+	outline: none;
+	color: white;
+	font-size: 14px;
+	float: left;
+	line-height: 20px;
+	transition: .3s;
+	width: 45px;
+}
+
+.buscar:hover > .buscartexto {
+		width: 250px;
+}
 
 
 /*-------------RECETA-DESAYUNO--------------------------*/
@@ -282,11 +867,10 @@ header img {
 	display:flex;
 	flex-direction:row;
 	justify-content: center;
-	text-align: left;
-	max-width:80%;
+	max-width:100%;
 	height: auto;
-	margin:90px 280px 90px 280px;
-	padding:0px 100px 0px 0px;
+	margin:150px 110px 90px 100px;
+	padding:0px 10px 0px 0px;
 }
 
 .receta h3 {
@@ -319,14 +903,16 @@ header img {
  }
 
 
-.receta li {
-	list-style-type: square;
+.ingredientes li {
+		list-style: none;
+		padding:8px 0px 5px 0px;
 }
+.ingredientes ul {padding:10px 0px 5px 0px;}
 
 
 .informacion img {
 	border-radius: 0px;
-	width:10%;
+	width:8%;
 	margin:0px;
 	padding:0px;
 }
@@ -346,105 +932,403 @@ header img {
 	padding: 50px 10px 10px 10px;
 }
 
+.video p {
+	padding-left: 90px;
+	font-weight:bold;}
 
-/*-------------SECCION PLANNER---------------------*/
+.video video { padding:5px 10px 60px 90px; }
 
-.listadecompras {
-	font-weight: bold;
+
+
+.otrosdesayunos p{
+	padding-left: 90px;
+	font-weight:bold;
+}
+
+
+.galeria {
+	width: 100%;
+	display:flex;
+	justify-content:flex-start;
+	margin: 10px 70px 50px 80px;
+	padding: 10px;
+
+}
+
+.galeria a img {
+	padding-right: 30px;
+}
+
+
+.galeria img {
+	width:150px;
+	margin: 5px 0px 6px 0px;
+	padding: 5px 0px 6px 0px;
+}
+
+/*-------------SECCION PERFIL---------------------*/
+
+.circulo {
+	padding-left: 0%;
+	width: 150px;
+	height: 150px;
+	background-color: darkolivegreen; 
+	border-radius: 100%;
+}
+
+.imagenperfil {
+	padding-left: 0%;
+}
+
+.circulo img {
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
+
+.tarjeta1 { 
 	width: 300px;
-	height: 400px;
+	height: 520px;
 	background-color:#f2efeb;
 	padding: 30px;
-	padding-left: 150px;
+	padding-left: 30px;
 	margin-left: 80px;
 	margin-top: 100px;
 	border-radius: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tarjeta2 {
+	width: 550px;
+	height: 320px;
+	background-color:#f2efeb;
+	border-radius: 40px;
+	margin: 20px 0px 10px 78px;
+	padding:1px 10px 10px 25px;
+}
+
+.tarjeta3 {
+	width: 550px;
+	height: 220px;
+	background-color:#f2efeb;
+	border-radius: 40px;
+	margin: 20px 0px 10px 70px;
+	padding:1px 10px 10px 25px;
+}
+.tarjeta3 h4 {margin-left:50px;}
+
+.tarjeta3 ul li {
+	list-style: none;
+	padding:5px;
 	}
 
-.listadecompras p {
-	display: flex; 
-	justify-content: flex-start;
-	text-align: center;
-	}
-
-.planner{
+.seccionperfil {
 	display:flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	margin-bottom: 100px;
 }
 
-.tuppers {
-	width: 500px;
-	height:400px;
-	display: flex;
-	flex-direction: column;
-	border-radius: 40px;
+.tarjetas {
+	padding-top: 80px;
 }
 
+.seccionperfil h3 {
+	font-weight: bold;
+}
+
+.seccionperfil  {
+	font-size: 15px;
+	padding-bottom: 120px;
+}
+
+.botonperfil {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 10px;
+	height: 45px;
+	width: 220px;
+	background-color: #FFFFFF;
+	border-radius: 40px;
+	margin-top: 30px;
+	padding: 10px 0px 0px 0px;
+	box-shadow: 4px 4px 4px #d1d3d4;
+}
+
+.botonperfil:hover {
+	background-color: #FB9224;
+	color: white;
+	transform: scale(1.2)
+}
+
+.misfavoritos {
+	padding-top: 10px;
+	padding-left: 40px;
+	font-weight: bold;
+}
+
+.cardfavoritos {
+	background-color: #FDFBFB;
+	border-radius: 30px;
+	padding: 0px 10px -5px 20px;
+	margin: 0px 20px 200px 40px;
+	width: 150px;
+	height: 190px;
+	text-align: center;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	font-family: montserrat;
+	position: static;
+	display: inline-block;
+	justify-content: center;
+}
+
+.cardfavoritos img {
+	border-radius: 30px 30px 0px 0px;
+	width: 100%;
+	height: 110px;
+	display: block;
+	padding-left: 0;
+}
+
+.cardfavoritos p {
+	font-weight:bold;
+	font-size: 12px;
+}
+
+.cardfavoritos a {
+	text-decoration: none;
+	color: white;
+}
+
+.cardfavoritos:hover {
+	transform: scale(1.1);
+	box-shadow: 4px 4px 20px #636363;
+}
+
+.botoncocinar3 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 12px;
+	height: 25px;
+	width: 100px;
+	background-color: #7FAB00;
+	border-radius: 20px;
+	padding: 10px 0px 0px 0px;
+	box-shadow: 4px 4px 4px #d1d3d4;
+}
+
+.mover {
+	padding-left: 25px;
+	padding-top: 0px;
+}
+
+.mover p {
+	color: white;
+}
+
+/*-------------SECCION PLANNER---------------------*/
+
+.listadecompras {
+	width: 400px;
+	height: 500px;
+	background-color:#f2efeb;
+	padding: 30px;
+	margin-left: 80px;
+	margin-top: 100px;
+	border-radius: 40px;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	}
+
+.listadecompras p {
+	font-weight: 800;
+	padding:10px;
+	margin-left: 100px;
+	font-size:20px;
+	}
+
+.listadecompras li {
+	list-style: none;
+}
+
+.check {
+	width: 20px;
+	height: 20px;
+	background-color:white;
+	margin-left: 20px;
+	}
+
+.check {
+	width: 20px;
+	height: 20px;
+	background-color:white;
+	margin-left: 20px;
+	border: 1px solid black;
+	}
+	
 
 .card1 {
-	width: 500px;
-	height: 200px;
-	border-radius: 40px;
+	width: 200px;
+	height: 160px;
 	background-color:#f2efeb;
-	margin: 100px 0px 10px 50px;
-	padding: 1px 10px 10px 25px;
+	padding: 20px;
+	padding-left: 300px;
+	margin-left: 600px;
+	margin-top: -558px;
+	border-radius: 40px;
+	box-shadow: 5px 5px 5px #d1d3d4;
 	}
 
 .card1 img {
-	margin-left: 25px;
+	margin-left: 110px;
+	margin-top: 25px;
 }
-	
+		
+.card1 p {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: -250px;
+	font-weight: 800;
+	}
+
+.listadecompras p {
+	display: flex; 
+	justify-content: flex-start;
+	margin-left: 20px;
+	}
+
+
 	
 .card2 {
-	width: 500px;
-	height: 200px;
+	width: 200px;
+	height: 100px;
 	background-color:#F39532;
+	padding: 20px;
+	padding-left: 300px;
+	margin-left: 600px;
+	margin-top: 40px;
 	border-radius: 40px;
-	margin: 20px 0px 10px 50px;
-	padding:1px 10px 10px 25px;
+	box-shadow: 5px 5px 5px #d1d3d4;
 	}
 
+.card2 p {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: -250px;
+	font-weight: 800;
+	}
 	
 .card3 {
-	width: 500px;
-	height: 200px;
+	width: 200px;
+	height: 100px;
 	background-color:#C7E800;
+	padding: 20px;
+	padding-left: 300px;
+	margin-left: 600px;
+	margin-top: 40px;
 	border-radius: 40px;
-	margin: 20px 0px 10px 50px;
-	padding:1px 10px 10px 25px;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	}
+	
+.card3 p {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: -250px;
+	font-weight: 800;
+	}	
+
+.card2 b {
+	display: flex;
+    justify-content: flex-end;
+	margin-right: 20px;
+    }
+
+.card3 b {
+	display: flex;
+    justify-content: flex-end;
+	margin-right: 20px;
+    }
+.click {
+	border-bottom:solid;
+	border-bottom-color:#316029;
+	}
+
+.botontupper {
+	display: flex;
+	justify-content: flex-end;
+	margin-right:10px; 	
 	}
 
 
-.botones {
-	font-style: italic;
-	font-weight: 500;
+.boton {
+	width:80px;
+	height:40px;
+	background-color:#F39532;
+	border-radius: 40px;
+	}
+
+.boton2 {
+	width:90px;
+	height:40px;
+	background-color:#C7E800;
+	border-radius: 40px;
+	margin-left: 0px;
+	}
+
+.opciones {
+	display:inline-flex;
+	margin-top: 80px;
+	margin-left: 802px;
+	}
+
+.boton p {
+	margin-top: 50px;
+	margin-left: 4px;
+	}
 	
-	margin: 200px 200px 1px 200px;
-}
+.boton2 p {
+	margin-top: 50px;
+	margin-left: 4px;
+	}
+	
+.botonop1 {
+	width: 50px;
+	heigth:40px;
+	background-color: #C7E800;
+	border-radius: 40px;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	}
 
-.botonop1 p {
-	border-top: 1px solid #C7E800;
-	color:#C7E800}
+.botonop2 {
+	width: 50px;
+	heigth:40px;
+	background-color:#F39532;
+	border-radius: 40px;
+	margin-left: 80px;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	}
 
-.botonop2 p {
-	border-top: 1px solid #F39532;
-	color:#F39532}
+.botenes {
+	display: flex;
+	margin-left: 600px;
+	margin-top: 50px;
+	text-align: center;
+	}
 
-
-/*-------------Footer------------*/
+/*-------------Footer-----------------------------------------------*/
 
 footer {
 	box-sizing: border-box; 
 	background-color: #F39532;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin: 0px;
-	padding: 0px 1px 80px 1px;
+	justify-content: flex-start;
+	margin:0px;
+	padding: 10px 10px 90px 100px;
 	width:100%;
-	height:60px;
+	height:80px;
 }
 
 footer p {
@@ -456,9 +1340,319 @@ footer p {
 .redessociales{
 	display:flex;
 	justify-content: flex-end;
-	padding: 30px 20px 20px 800px;
+	padding: 30px 200px 20px 80px;
 }
 
 img {
 	padding-left: 20px;
 }
+
+
+
+/*-------------RESPONSIVE-----------------------------------------------*/
+
+
+@media screen and (max-width:600px) {
+	
+	header img{
+		display:none;
+	}
+	
+.botonera {
+	width:100%;
+	background-color:#316029;
+	margin:0px;
+	}
+	
+.botonera ul  {
+	color:#FFFFFF;
+	font-size:0.8em;
+	margin:20px 50px 20px 0px;
+	}
+
+.botonera li {
+	color:#FFFFFF;
+	margin:10px 20px 10px 20px;
+	padding-right:10px;
+	}
+
+.botonera a {
+	color:#FFFFFF;
+	}
+	
+.botonera a:hover{
+	color:#81E936;
+	border-bottom-color: #81E936;	
+}
+	
+.recetacompleta	img {
+	border-top-right-radius:20px; 
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 0px;
+	padding:0px 0px 0px 0px;
+	margin:0px;
+	width:100%;
+	}
+	
+.recetacompleta {
+	border-radius:20px;
+	box-shadow: 0px;
+	flex-direction: column;
+	align-items: center;
+	height: auto;
+	padding:0px;
+	margin:150px 20px 90px 20px;
+	}
+
+.receta {padding: 0px 10px 0px 10px}
+	
+.informacion img {
+	border-radius: 0px;
+	width:18%;
+	margin:0px;
+	padding:0px;
+	}
+
+.informacion p {
+	margin: 10px 2px 20px 5px;
+	padding: 10px 10px 0px 10px;
+	}
+	
+.informacion {
+	margin: 0px 20px 10px 5px;
+	padding: 20px 5px 10px 5px;
+}
+	
+.procedimiento {
+	margin-bottom:20px;
+	}
+	
+.video p {
+	align-items: center;
+	padding-left: 60px;
+	padding-rigth:90px;
+	max-width: 300px;
+	font-weight:bold;
+	}
+	.video video {
+		padding-left: 60px;
+	}
+	
+	
+.galeria {
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	align-content:center;
+	margin: 10px 10px 50px 60px;
+	padding: 10px;
+}
+	
+.otrosdesayunos p {
+	align-items: center;
+	padding-left: 60px;
+	padding-rigth:90px;
+	max-width: 300px;
+}
+
+.galeria a img {
+	padding-left: 60px;
+	padding-rigth:90px;
+}
+
+
+.galeria img {
+	width:150px;
+	margin: 5px 0px 6px 0px;
+	padding: 5px 0px 6px 0px;
+}
+	
+	
+/*------------- SECCION / MOMENTO DEL DIA responsive -----------------------------*/
+
+.momentosdeldia h3 {
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	width: 180px;
+	font-weight: 700;
+	font-size: 1.3em;
+	line-height: 25px;
+	margin: 150px 90px 30px 100px;
+}
+
+.momentosdeldia p {
+	display: grid;
+	place-items: center;
+	flex-direction: column;
+  	justify-content: center;
+	text-align: center;
+	font-size: 0.8em;
+	line-height: 20px;
+	width: 250px;
+	margin: 0px 0px 50px 70px;
+	}
+
+.click {
+	border-bottom:solid;
+	border-bottom-color: #316029;
+}
+
+.card {
+	background-color: #FDFBFB;
+	border-radius: 20px;
+	margin: 0px 15px 50px 15px;
+	width: 230px;
+	height: auto;
+	text-align: center;
+	box-shadow: 5px 5px 5px #d1d3d4;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+  	flex-wrap: wrap;
+
+}
+.cardsmomentos{
+	display: flex;
+ 	flex-direction: row;
+  	justify-content: center;
+  	flex-wrap: wrap;
+}
+
+.card img {
+	border-radius: 20px 20px 0px 0px;
+	width: 100%;
+	display: block;
+}
+
+.card p {
+	font-weight:bold;
+	font-size: 1em;
+	
+}
+
+.card a {
+	text-decoration: none;
+	color: white;
+}
+
+.boton2  {
+	background-color: #7FAB00;
+	border-radius: 20px 20px;
+	color: white;
+	padding: 15px 10px 15px 10px;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	margin: 30px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card:hover {
+	transform: scale(1.1);
+	box-shadow: 2px 2px 15px #636363;
+	}
+	
+/*---todos desayunos responsive---*/
+.carddesayunos {
+	margin: 0px 80px 50px 0px;
+	}
+	
+.bold  {
+	font-size: 15px;
+  }
+	
+.titulo h1 {
+	display: flex;
+	flex-direction: column;
+	font-size: 17px;
+	margin-right: 100px
+	}
+	
+.titulo {
+	display: flex;
+	flex-direction: column;
+	}
+	
+.botoncocinar {
+	font-size: 15px;
+  }
+	
+.titulodesayunos h3 {
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	width: 180px;
+	font-weight: 700;
+	font-size: 1.3em;
+	line-height: 25px;
+	margin: 150px 90px 30px 100px;
+	}
+	
+.titulodesayunos p{
+	display: grid;
+	place-items: center;
+	flex-direction: column;
+  	justify-content: center;
+	text-align: center;
+	font-size: 0.8em;
+	line-height: 20px;
+	width: 250px;
+	margin: 0px 0px 50px 70px;
+	}
+	
+.buscar {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	position: absolute;
+	left: 30%;
+	top: 18%;
+	padding: 5px; 
+}
+	
+/*---footer responsive---*/
+	
+footer { 
+	background-color: #F39532;
+	display: flex;
+	justify-content: center;
+	margin-top:80px;
+	width:100%;
+	height: 130px;
+}
+
+footer p {
+	color: white;
+	font-size: 0.7em;
+	display: flex;
+	align-content: center;
+	text-align: center;
+	padding: 5px;
+}
+
+.redessociales{
+	display:flex;
+	align-content: center;
+	flex-direction: inline;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+footer img {
+	display: inline-block;
+	width: 30%;
+	height: 30%;
+	position: static;
+}
+
+	
+}
+
